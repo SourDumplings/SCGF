@@ -1,0 +1,6 @@
+scgf_log_info("Hello from Lua!")
+local sum = scgf_add(10, 20)
+scgf_log_info("Sum: " .. sum)
+scgf_log_info("project_base_dir: " .. scgf_get_project_base_dir())
+local time = scgf_get_now_time_ms()
+scgf_log_info("Current time: " .. time)
