@@ -41,24 +41,26 @@ target_link_libraries(scgf
     PRIVATE crypto_algorithms_static
     easy_profiler
     imgui
+    litehtml
     lua_shared
     SDL3
     SDL3_mixer
     SDL3_ttf
-    zlib
     stb
 )
 
 if(${CMAKE_BUILD_TYPE} MATCHES "Debug")
     target_link_libraries(scgf PRIVATE spdlogd)
+    target_link_libraries(scgf PRIVATE zlibd)
 else()
     target_link_libraries(scgf PRIVATE spdlog)
+    target_link_libraries(scgf PRIVATE zlib)
 endif()
 
 install(TARGETS scgf DESTINATION ${dist_dir})
 
 if(WIN32 AND ${CMAKE_BUILD_TYPE} MATCHES "Debug")
     # Install pdb
-    install(FILES "${PROJECT_BINARY_DIR}/src/bin/scgf.pdb" DESTINATION ${dist_dir})
+    install(FILES "${PROJECT_BINARY_DIR}/src/Debug/scgf.pdb" DESTINATION ${dist_dir})
 endif()
 

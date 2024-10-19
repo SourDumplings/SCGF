@@ -25,19 +25,13 @@ git submodule update --remote --recursive
 ```
 
 ## Set up build environment
-SCGF uses Clang 19.1.0 compiling toolset.
-
 - CMake 3.28+: [cmake](https://cmake.org/)
 - Python 3.9+: [python](https://www.python.org/)
   - **Set up your environment variable `python3`.** For example, you can copy `python.exe` as `python3.exe` on windows after installing python3 and set up environment variable `PATH` as usual.
   - pycryptodome
 
 ### Windows
-- llvm-mingw: [llvm-mingw](https://github.com/mstorsjo/llvm-mingw/releases/download/20240917/llvm-mingw-20240917-msvcrt-x86_64.zip)
-  - Set `/bin` sub dir into `PATH` environment variable
-  - Configure clang compiler path in `.vscode/c_cpp_properties.json`
-- MinGW-w64: [MinGW-w64 - winlibs standalone build](https://github.com/brechtsanders/winlibs_mingw/releases/download/14.2.0posix-19.1.1-12.0.0-msvcrt-r2/winlibs-x86_64-posix-seh-gcc-14.2.0-mingw-w64msvcrt-12.0.0-r2.7z)
-  - Set `/bin` sub dir into `PATH` environment variable
+SCGF uses MSVC compiling toolset.
 - Visual Studio 2022
   - Configure vcpkg path in `CMakeLists.txt`
 

@@ -21,6 +21,8 @@ int parse_xml(const std::string& xmlString)
 	// 解析 XML 字符串
 	try
 	{
+		// std::cout << xmlCopy[0] << std::endl;
+
 		doc.parse<0>(&xmlCopy[0]);
 	}
 	catch (const rapidxml::parse_error& e)
@@ -69,8 +71,9 @@ int parse_scgf_xml()
 			scgf::util::Compressor::get_instance().decompress(decryptedData.get(), decryptedSize);
 
 		// 转换为字符串输出
-		std::string xmlString(decompressedData.get());
+		std::string xmlString(decompressedData.get(), decompressedSize);
 		// std::cout << "Decrypted and decompressed XML: " << xmlString << std::endl;
+		// std::cout << "Decrypted and decompressed XML size: " << decompressedSize << std::endl;
 
 		parse_xml(xmlString);
 	}

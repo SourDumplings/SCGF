@@ -12,8 +12,6 @@ namespace scgf::util
 {
 Logger::Logger()
 {
-	std::cout << "Logger this: " << this << std::endl;
-
 #ifdef DEBUG
 	auto consoleSink = std::make_shared<spdlog::sinks::stdout_color_sink_mt>();
 	consoleSink->set_level(LogLevel::trace);

@@ -34,3 +34,6 @@
 [submodule "external/SDL_ttf"]
 	path = external/SDL_ttf
 	url = git@github.com:SourDumplings/SDL_ttf.git
+[submodule "external/litehtml"]
+	path = external/litehtml
+	url = git@github.com:SourDumplings/litehtml.git
