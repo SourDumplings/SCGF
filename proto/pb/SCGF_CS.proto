@@ -1,0 +1,29 @@
+syntax = "proto3";
+package protocol.scgf.cs;
+
+option java_multiple_files = true;
+option java_package = "com.sourd.scgf.proto";
+option java_outer_classname = "SCGFCSMessage";
+
+
+import "google/protobuf/descriptor.proto";
+
+// 定义消息 ID 的 option
+extend google.protobuf.MessageOptions { SCGFCSMessageID MsgID = 666666; }
+
+
+// 消息 ID 枚举
+enum SCGFCSMessageID
+{
+	SCGF_CS_INVALID = 0;
+	SCGF_CS_SERVER_MESSAGE = 0x01;
+}
+
+message NTFServerMessage
+{
+	option (MsgID) = SCGF_CS_SERVER_MESSAGE;
+
+	bool is_admin_msg = 1;
+	uint32 type = 2;
+	string message = 3;
+}

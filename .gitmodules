@@ -1,0 +1,42 @@
+[submodule "external/SDL"]
+	path = external/SDL
+	url = git@github.com:SourDumplings/SDL.git
+[submodule "external/entt"]
+	path = external/entt
+	url = git@github.com:SourDumplings/entt.git
+[submodule "external/spdlog"]
+	path = external/spdlog
+	url = git@github.com:SourDumplings/spdlog.git
+[submodule "external/zlib"]
+	path = external/zlib
+	url = git@github.com:SourDumplings/zlib.git
+[submodule "external/rapidxml"]
+	path = external/rapidxml
+	url = git@github.com:SourDumplings/rapidxml.git
+[submodule "external/crypto-algorithms"]
+	path = external/crypto-algorithms
+	url = git@github.com:SourDumplings/crypto-algorithms.git
+[submodule "external/Lua"]
+	path = external/Lua
+	url = git@github.com:SourDumplings/Lua.git
+[submodule "external/imgui"]
+	path = external/imgui
+	url = git@github.com:SourDumplings/imgui.git
+[submodule "external/stb-cmake"]
+	path = external/stb-cmake
+	url = git@github.com:SourDumplings/stb-cmake.git
+[submodule "external/easy_profiler"]
+	path = external/easy_profiler
+	url = git@github.com:SourDumplings/easy_profiler.git
+[submodule "external/SDL_mixer"]
+	path = external/SDL_mixer
+	url = git@github.com:SourDumplings/SDL_mixer.git
+[submodule "external/SDL_ttf"]
+	path = external/SDL_ttf
+	url = git@github.com:SourDumplings/SDL_ttf.git
+[submodule "external/litehtml"]
+	path = external/litehtml
+	url = git@github.com:SourDumplings/litehtml.git
+[submodule "external/protobuf"]
+	path = external/protobuf
+	url = git@github.com:SourDumplings/protobuf.git

@@ -1,0 +1,88 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Build dist debug on Windows",
+      "type": "shell",
+      "command": "${workspaceFolder}/tool/cmake_build_game_client_dist_debug_on_windows.bat",
+      "problemMatcher": [],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    },
+    {
+      "label": "Build dist release on Windows",
+      "type": "shell",
+      "command": "${workspaceFolder}/tool/cmake_build_game_client_dist_release_on_windows.bat",
+      "problemMatcher": [],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    },
+    {
+      "label": "Build intermediate debug on Windows",
+      "type": "shell",
+      "command": "${workspaceFolder}/tool/cmake_build_intermediate_debug_on_windows.bat",
+      "problemMatcher": [],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    },
+    {
+      "label": "Build intermediate release on Windows",
+      "type": "shell",
+      "command": "${workspaceFolder}/tool/cmake_build_intermediate_release_on_windows.bat",
+      "problemMatcher": [],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    },
+    {
+      "label": "Run test on Windows",
+      "type": "shell",
+      "command": "${workspaceFolder}/dist/bin/SCGF.exe",
+      "options": {
+        "cwd": "${workspaceFolder}/dist"
+      },
+      "problemMatcher": [],
+      "group": {
+        "kind": "test",
+        "isDefault": true
+      }
+    },
+    {
+      "label": "Zip project on Windows",
+      "type": "shell",
+      "command": "${workspaceFolder}/tool/zip_project_on_windows.bat",
+      "problemMatcher": [],
+      "group": {
+        "kind": "test",
+        "isDefault": true
+      }
+    },
+    {
+      "label": "Clean build dist on Windows",
+      "type": "shell",
+      "command": "${workspaceFolder}/tool/clean_build_dist_on_windows.bat",
+      "problemMatcher": [],
+      "group": {
+        "kind": "none",
+        "isDefault": true
+      }
+    },
+    {
+      "label": "Clean all on Windows",
+      "type": "shell",
+      "command": "${workspaceFolder}/tool/clean_all_on_windows.bat",
+      "problemMatcher": [],
+      "group": {
+        "kind": "none",
+        "isDefault": true
+      }
+    }
+  ]
+}

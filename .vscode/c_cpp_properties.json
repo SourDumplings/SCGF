@@ -1,0 +1,25 @@
+{
+    "configurations": [
+        {
+            "name": "windows-msvc-x64",
+            "includePath": [
+                "${workspaceFolder}/src/**",
+                "${workspaceFolder}/external/litehtml/src/gumbo/include/**",
+                "${workspaceFolder}/external/litehtml/src/gumbo/include/gumbo/**",
+                "${workspaceFolder}/external/litehtml/src/gumbo/visualc/include/**",
+                "${workspaceFolder}/external/imgui/**",
+                "${workspaceFolder}/external/SDL/include/**",
+                "${workspaceFolder}/external/SDL_mixer/include/**",
+                "${workspaceFolder}/external/SDL_ttf/include/**",
+                "${workspaceFolder}/external/spdlog/include/**",
+                "${workspaceFolder}/intermediate/include/**",
+                "${workspaceFolder}/intermediate/generated/**"
+            ],
+            "intelliSenseMode": "windows-msvc-x64",
+            "compilerPath": "D:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.36.32532/bin/Hostx64/x64/cl.exe",
+            "cStandard": "c11",
+            "cppStandard": "c++20",
+        }
+    ],
+    "version": 4
+}

@@ -1,0 +1,14 @@
+build
+intermediate
+# Ignore root dist directory
+dist
+# Don't ignore dist directories in other locations
+!/*/dist/
+
+res/dist/scgf
+
+.vs
+SCGF*.zip
+
+# key conf
+conf/key.xml
