@@ -106,7 +106,28 @@ add_compile_definitions(SPDLOG_ACTIVE_LEVEL=SPDLOG_LEVEL_TRACE)
 if(${BUILD_TARGET} MATCHES "intermediate")
     add_subdirectory(${external_dir})
 else()
+    if(NOT DEFINED ENV{SCGF_AES_KEY})
+        message("ENV SCGF_AES_KEY is not defined, load from ${CMAKE_SOURCE_DIR}/conf/key.xml")
+        file(READ "${CMAKE_SOURCE_DIR}/conf/key.xml" xml_content)
+        string(REGEX MATCH "<AES>([^<]+)</AES>" _match_aes_key "${xml_content}")
+        set(SCGF_AES_KEY "${CMAKE_MATCH_1}")
+        add_compile_definitions(SCGF_AES_KEY="${SCGF_AES_KEY}")
+    else()
+        add_compile_definitions(SCGF_AES_KEY="$ENV{SCGF_AES_KEY}")
+    endif()
+
+    execute_process(
+        COMMAND python3 ${CMAKE_SOURCE_DIR}/tool/generate_proto.py
+        WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
+        RESULT_VARIABLE result
+    )
+
+    if(result)
+        message(FATAL_ERROR "Failed to execute generate_proto.py")
+    endif()
+
     add_subdirectory(src)
+    add_subdirectory(test)
 endif()
 
 if(MSVC)

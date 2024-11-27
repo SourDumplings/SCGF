@@ -19,13 +19,13 @@ include_directories(${Protobuf_INCLUDE_DIRS})
 link_directories(${CMAKE_LIBRARY_PATH})
 
 file(GLOB_RECURSE
-    scgf_headers
+    scgf_sources
     CONFIGURE_DEPENDS
-    *.h
+    ${src_dir}/**/*.cpp
 )
 
 file(GLOB_RECURSE
-    scgf_sources
+    scgf_test_sources
     CONFIGURE_DEPENDS
     *.cpp
 )
@@ -38,9 +38,11 @@ file(GLOB_RECURSE
 
 message(STATUS "Protobuf generated source files: ${pb_cc}")
 
-add_executable(${project_name} ${scgf_sources} ${pb_cc})
+set(scgf_test_project_name SCGFTest)
 
-target_link_libraries(${project_name}
+add_executable(${scgf_test_project_name} ${scgf_test_sources} ${scgf_sources} ${pb_cc})
+
+target_link_libraries(${scgf_test_project_name}
     PRIVATE 
     absl::base
     absl::strings
@@ -60,14 +62,14 @@ target_link_libraries(${project_name}
 )
 
 if(${CMAKE_BUILD_TYPE} MATCHES "Debug")
-    target_link_libraries(${project_name} PRIVATE spdlogd)
+    target_link_libraries(${scgf_test_project_name} PRIVATE spdlogd)
 else()
-    target_link_libraries(${project_name} PRIVATE spdlog)
+    target_link_libraries(${scgf_test_project_name} PRIVATE spdlog)
 endif()
 
-install(TARGETS ${project_name} DESTINATION ${dist_bin_dir})
+install(TARGETS ${scgf_test_project_name} DESTINATION ${dist_bin_dir})
 
 if(MSVC AND ${CMAKE_BUILD_TYPE} MATCHES "Debug")
     # Install pdb
-    install(FILES "${PROJECT_BINARY_DIR}/src/Debug/${project_name}.pdb" DESTINATION ${dist_bin_dir})
+    install(FILES "${PROJECT_BINARY_DIR}/test/Debug/${scgf_test_project_name}.pdb" DESTINATION ${dist_bin_dir})
 endif()

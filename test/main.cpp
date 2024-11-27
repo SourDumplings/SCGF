@@ -1,4 +1,3 @@
-#include "test.h"
 #include "test_easy_profiler.h"
 #include "test_ecs.h"
 #include "test_entt.h"
@@ -12,6 +11,7 @@
 #include "test_string.h"
 #include <cstdlib>
 #include <iostream>
+#include "SDL3/SDL_main.h"
 
 void test_asan()
 {
@@ -19,7 +19,7 @@ void test_asan()
 	x[100] = 5;	 // Boom!
 }
 
-int test()
+int main(int argc, char *argv[])
 {
 	// test_asan();
 	// test_easy_profiler();
@@ -28,9 +28,9 @@ int test()
 	// test_imgui();
 	// test_litehtml();
 	// test_lua();
-	// test_pb();
+	test_pb();
 	// test_scgf_xml();
-	test_sdl3();
+	// test_sdl3();
 	// test_spdlog();
 	// test_string();
 	return 0;
