@@ -12,6 +12,7 @@
 #include <cstdlib>
 #include <iostream>
 #include "SDL3/SDL_main.h"
+#include "util/logger.h"
 
 void test_asan()
 {
@@ -21,6 +22,8 @@ void test_asan()
 
 int main(int argc, char *argv[])
 {
+	SCGF_LOG_INFO("Welcome to " PROJECT_NAME " Test!");
+
 	// test_asan();
 	// test_easy_profiler();
 	// test_ecs();

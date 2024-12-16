@@ -17,4 +17,4 @@ if %errorlevel% neq 0 (
 echo AES_KEY: %AES_KEY%
 
 set SCGF_AES_KEY=%AES_KEY%
-call "%project_base_dir%\tool\cmake_build_on_windows.bat" "Release" "dist" 1 "one"
+call "%project_base_dir%\tool\cmake_build_on_windows.bat" "Release" "dist" "Client" "one"

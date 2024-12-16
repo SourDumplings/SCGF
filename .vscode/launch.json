@@ -2,10 +2,18 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Launch Program",
+            "name": "Launch client",
             "type": "cppvsdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/dist/SCGF.exe",
+            "program": "${workspaceFolder}/dist/bin/SCGF_client.exe",
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "name": "Launch test program",
+            "type": "cppvsdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/dist/bin/SCGF_test.exe",
             "args": [],
             "cwd": "${workspaceFolder}"
         }

@@ -4,7 +4,7 @@
     {
       "label": "Build dist debug on Windows",
       "type": "shell",
-      "command": "${workspaceFolder}/tool/cmake_build_game_client_dist_debug_on_windows.bat",
+      "command": "${workspaceFolder}/tool/cmake_build_dist_debug_on_windows.bat",
       "problemMatcher": [],
       "group": {
         "kind": "build",
@@ -14,7 +14,7 @@
     {
       "label": "Build dist release on Windows",
       "type": "shell",
-      "command": "${workspaceFolder}/tool/cmake_build_game_client_dist_release_on_windows.bat",
+      "command": "${workspaceFolder}/tool/cmake_build_dist_release_on_windows.bat",
       "problemMatcher": [],
       "group": {
         "kind": "build",
@@ -44,7 +44,7 @@
     {
       "label": "Run test on Windows",
       "type": "shell",
-      "command": "${workspaceFolder}/dist/bin/SCGFTest.exe",
+      "command": "${workspaceFolder}/dist/bin/SCGF_test.exe",
       "options": {
         "cwd": "${workspaceFolder}/dist"
       },
@@ -55,9 +55,9 @@
       }
     },
     {
-      "label": "Run on Windows",
+      "label": "Run client on Windows",
       "type": "shell",
-      "command": "${workspaceFolder}/dist/bin/SCGF.exe",
+      "command": "${workspaceFolder}/dist/bin/SCGF_client.exe",
       "options": {
         "cwd": "${workspaceFolder}/dist"
       },

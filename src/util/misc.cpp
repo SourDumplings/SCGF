@@ -111,11 +111,11 @@ void print_envir_info()
 	// Build
 	oss << "Build type:  " << CMAKE_BUILD_TYPE << std::endl;
 	
-	if (std::stoi(DEPLOY_TARGET) == eDEPLOY_TARGET_GAME_CLIENT)
+	if (DEPLOY_TARGET_ENUM == eDEPLOY_TARGET_GAME_CLIENT)
 	{
 		oss << "Deploy target: Game Client" << std::endl;
 	}
-	else if (std::stoi(DEPLOY_TARGET) == eDEPLOY_TARGET_GAME_SERVER)
+	else if (DEPLOY_TARGET_ENUM == eDEPLOY_TARGET_GAME_SERVER)
 	{
 		oss << "Deploy target: Game Server" << std::endl;
 	}

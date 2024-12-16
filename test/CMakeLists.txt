@@ -38,7 +38,7 @@ file(GLOB_RECURSE
 
 message(STATUS "Protobuf generated source files: ${pb_cc}")
 
-set(scgf_test_project_name SCGFTest)
+set(scgf_test_project_name ${project_name}_test)
 
 add_executable(${scgf_test_project_name} ${scgf_test_sources} ${scgf_sources} ${pb_cc})
 

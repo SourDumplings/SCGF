@@ -38,9 +38,22 @@ file(GLOB_RECURSE
 
 message(STATUS "Protobuf generated source files: ${pb_cc}")
 
-add_executable(${project_name} ${scgf_sources} ${pb_cc})
+set(exe_name ${project_name})
+if(${BUILD_TARGET} MATCHES "dist")
+    if(${DEPLOY_TARGET} MATCHES "Client")
+        message(STATUS "deploy target: Game Client")
+        set(exe_name ${exe_name}_client)
+    elseif(${DEPLOY_TARGET} MATCHES "Server")
+        message(STATUS "deploy target: Game Server")
+        set(exe_name ${exe_name}_server)
+    else()
+        message(FATAL_ERROR "deploy target: Unknown")
+    endif()
+endif()
 
-target_link_libraries(${project_name}
+add_executable(${exe_name} ${scgf_sources} ${pb_cc})
+
+target_link_libraries(${exe_name}
     PRIVATE 
     absl::base
     absl::strings
@@ -60,14 +73,14 @@ target_link_libraries(${project_name}
 )
 
 if(${CMAKE_BUILD_TYPE} MATCHES "Debug")
-    target_link_libraries(${project_name} PRIVATE spdlogd)
+    target_link_libraries(${exe_name} PRIVATE spdlogd)
 else()
-    target_link_libraries(${project_name} PRIVATE spdlog)
+    target_link_libraries(${exe_name} PRIVATE spdlog)
 endif()
 
-install(TARGETS ${project_name} DESTINATION ${dist_bin_dir})
+install(TARGETS ${exe_name} DESTINATION ${dist_bin_dir})
 
 if(MSVC AND ${CMAKE_BUILD_TYPE} MATCHES "Debug")
     # Install pdb
-    install(FILES "${PROJECT_BINARY_DIR}/src/Debug/${project_name}.pdb" DESTINATION ${dist_bin_dir})
+    install(FILES "${PROJECT_BINARY_DIR}/src/Debug/${exe_name}.pdb" DESTINATION ${dist_bin_dir})
 endif()
