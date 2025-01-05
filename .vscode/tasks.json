@@ -96,6 +96,16 @@
         "kind": "none",
         "isDefault": true
       }
+    },
+    {
+      "label": "Clang format",
+      "type": "shell",
+      "command": "clang-format -i ${file}",
+      "problemMatcher": [],
+      "group": {
+        "kind": "none",
+        "isDefault": true
+      }
     }
   ]
 }
