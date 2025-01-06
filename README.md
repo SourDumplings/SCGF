@@ -3,8 +3,10 @@
   - [Set up dev environment](#set-up-dev-environment)
   - [Clone with submodules](#clone-with-submodules)
   - [Update submodules](#update-submodules)
+  - [Config `conf/key.xml`](#config-confkeyxml)
   - [Set up build environment](#set-up-build-environment)
     - [Windows](#windows)
+  - [Generate scgf files](#generate-scgf-files)
 - [Coding](#coding)
 - [Build and test](#build-and-test)
   - [Windows](#windows-1)
@@ -36,6 +38,14 @@ git clone --recursive git@github.com:SourDumplings/SCGF.git
 git submodule update --remote --recursive
 ```
 
+## Config `conf/key.xml`
+You mush set up keys manually before building:
+```xml
+<Key>
+    <AES>Your 32 bytes AES key</AES>
+</Key>
+```
+
 ## Set up build environment
 - CMake 3.28+: [cmake](https://cmake.org/)
 - Python 3.9+: [python](https://www.python.org/)
@@ -46,6 +56,9 @@ git submodule update --remote --recursive
 SCGF uses MSVC compiling toolset.
 - Visual Studio 2022
   - Configure vcpkg path in `CMakeLists.txt`
+  
+## Generate scgf files
+Run python scripts `tool/zip_encr_scripts.py` and `tool/zip_encr_xmls.py` to generate scgf files in `res/dist/scgf`.
 
 # Coding
 - C++: C++ 20 standard for SCGF src and test

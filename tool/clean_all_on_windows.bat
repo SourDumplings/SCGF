@@ -19,3 +19,15 @@ if exist "%project_base_dir%\dist" (
 ) else (
     echo No dist directory found to delete.
 )
+
+if exist "%project_base_dir%\conf\key.xml" (
+    del /s /q "%project_base_dir%\conf\key.xml"
+) else (
+    echo No conf\key.xml directory found to delete.
+)
+
+if exist "%project_base_dir%\res\dist\scgf" (
+    rmdir /s /q "%project_base_dir%\res\dist\scgf"
+) else (
+    echo No res\dist\scgf directory found to delete.
+)
